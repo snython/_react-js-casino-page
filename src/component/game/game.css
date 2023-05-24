@@ -8,3 +8,37 @@
     box-sizing: border-box;
     cursor: pointer;
 }
+
+.details{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /* display: none; */
+}
+
+.btn{
+    width: 50%;
+    background: blue;
+    border-radius: 5px;
+    height: 20px;
+    /* display: none; */
+}
+
+.title{
+    font-weight:bold;
+    /* display: none; */
+}
+
+blink {
+    -webkit-animation: 1s blinker linear infinite;
+    -moz-animation: 1s blinker linear infinite;
+    -ms-animation: 1s blinker linear infinite;
+    -o-animation: 1s blinker linear infinite;
+    animation: 1s blinker linear infinite;
+    }
+    
+    @-webkit-keyframes blinker {
+    0% { opacity: 1.0; } 50% { opacity: 0.0; } 100% { opacity: 1.0; } }
+    
+    @-moz-keyframes blinker { 0% { opacity: 1.0; } 50% { opacity: 0.0; } 100% { opacity: 1.0; } }
+    
+    @keyframes blinker { 0% { opacity: 1.0; } 50% { opacity: 0.0; } 100% { opacity: 1.0;} }

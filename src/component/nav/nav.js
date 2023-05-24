@@ -53,7 +53,7 @@ class Navs extends Component {
         });
     }
     render() {
-        const activeStyle = { background: '#8DC63F', };
+        const activeStyle = { background: '#8DC63F',color:'' };
         return (
             <header className="all">
                 <nav className="navs">

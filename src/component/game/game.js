@@ -2,16 +2,20 @@ import React from 'react';
 import './game.css';
 
 const Game = (props) => (
-    <article className="Game" data-src={props.image} onClick={props.clicked}>
-        <h3>{props.title}</h3>
+    <article blink className="Game" onMouseEnter={props.onMouseEnter}
+    onMouseLeave={props.onMouseLeave}>
+        {props.isShown && (<p  className="title">{props.title}</p>)}
         <div className="Info" >
             {/* <div className="Author">{props.author}</div> */}
             <img
-                // key={props.name}
+                key={props.key}
                 alt ={props.name}
                 src={props.image}
                 style={{ width: '100%', height: '100%' }}
               />
+              {props.isShown && (<div className="details">
+              <button className="btn" onClick={props.clicked}>Play</button>
+              </div>)}
         </div>
     </article>
 );

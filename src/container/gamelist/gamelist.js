@@ -7,7 +7,8 @@ class Gamelists extends Component {
     state = {
         gameList: [],
         selectedGameId:null,
-        error: false
+        error: false,
+        isShown: false
     }
 
     componentDidMount() {
@@ -26,16 +27,23 @@ class Gamelists extends Component {
         this.setState({selectedGameId: id});
     }
 
+    setIsShown = (val) => {
+        this.setState({isShown: val});
+    }
+
     render() {
         let games = <p style={{textAlign: 'center'}}>Something went wrong!</p>;
         if (!this.state.error) {
             games = this.state.gameList.map(game => {
                 return <Game 
-                    key={game.id} 
+                    key={game.id}
                     title={game.name} 
-                    author={game.category}
+                    category={game.category}
+                    isShown={this.state.isShown}
                     image={game.image}
-                    clicked={() => this.gameSelectedHandler(game.id)} />;
+                    clicked={() => this.gameSelectedHandler(game.id)}
+                    onMouseEnter={() => this.setIsShown(true)}
+    onMouseLeave={() => this.setIsShown(false)} />;
             });
         }
         return (<div className="wrapper">
