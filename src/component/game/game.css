@@ -28,7 +28,7 @@
     /* display: none; */
 }
 
-blink {
+article:hover {
     -webkit-animation: 1s blinker linear infinite;
     -moz-animation: 1s blinker linear infinite;
     -ms-animation: 1s blinker linear infinite;

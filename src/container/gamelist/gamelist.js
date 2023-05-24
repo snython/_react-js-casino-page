@@ -38,6 +38,7 @@ class Gamelists extends Component {
                 return <Game 
                     key={game.id}
                     title={game.name} 
+                    ids={game.id} 
                     category={game.category}
                     isShown={this.state.isShown}
                     image={game.image}
