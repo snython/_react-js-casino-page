@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import './nav.css';
-// import { Link } from 'react-router-dom';
+// import Gamelists from '../../container/gamelist/gamelist';
 
 
 class Navs extends Component {
@@ -53,7 +53,7 @@ class Navs extends Component {
                     <div className="nav_items">
                         <ul>{this.state.menuItems.map((items, index) => {
                             return <li style={this.state.active === items.name ? activeStyle : {}} 
-                            onClick={this._handleClick.bind(this, items.name)} key={items.id}><a><b>{items.name}</b></a></li>
+                            onClick={this._handleClick.bind(this, items.name)} onChange={this.props.selMenu} key={items.id}><a><b>{items.name}</b></a></li>
                         })}
                         </ul>
                     </div>
