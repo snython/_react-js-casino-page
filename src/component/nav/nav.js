@@ -42,16 +42,9 @@ class Navs extends Component {
 
     _handleClick(menuItem) { 
         this.setState({ active: menuItem });
-        console.log(this.state.active);
         localStorage.setItem('link',menuItem);
       }
     
-
-    functionForToogle=()=>{
-        this.setState({
-            // dropdownsOpen: !this.state.dropdownsOpen,
-        });
-    }
     render() {
         const activeStyle = { background: '#8DC63F',color:'' };
         return (

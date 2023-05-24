@@ -12,6 +12,10 @@ class Gamelists extends Component {
     }
 
     componentDidMount() {
+        this.getGameList();
+    }
+
+    getGameList() {
         axios.get('http://stage.whgstage.com/front-end-test/games.php').then((response) => {
             console.log(response.data);
             const list = response.data;
@@ -38,7 +42,7 @@ class Gamelists extends Component {
                 return <Game 
                     key={game.id}
                     title={game.name} 
-                    ids={game.id} 
+                    ids={game.id}
                     category={game.category}
                     isShown={this.state.isShown}
                     image={game.image}
